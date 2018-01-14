@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+   
+    <body>
+        <h1>Job-uri contabilitate</h1>
+         <link rel="stylesheet" type="text/css" href="styleC.css"/>
+         <br>
+         <p>Acestea sunt job-urile pentru care poti aplica: </p>
+         </br>
+         
+  <ol>
+  <li> Junior Accountant @BRD</li>
+  <li> Accounting manager @IKEA</li>
+  <li> Accountant @Carrefour</li>
+</ol>
+
+<br></br>
+
+
+  <table style="width:100%">
+  <tr>
+    <th>Nume</th>
+    <th>Prenume</th> 
+    <th>Job pt care a aplicat</th>
+  </tr>
+  <tbody id="tableBody">
+  <tr>
+    <td>Mandru</td>
+    <td>George</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Savu</td>
+    <td>Mihaela</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Rotaru</td>
+    <td>Alexandru</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>Udrescu</td>
+    <td>Sorana</td>
+    <td>3</td>
+  </tr>
+  </tbody>
+</table>
+
+<form action="#" class="controls">
+            <label for="nume">Nume:</label>
+            <input name="nume" id="nume">
+            <label for="prenume">Prenume:</label>
+            <input name="prenume" id="prenume">
+            <label for="job">Job:</label>
+            <input name="job" id="job">
+            <input type="button" name="btnAplica" value="Aplica" onclick="adaugaCandidat()">
+        </form>
+
+        <script type="text/javascript">
+            function adaugaCandidat() {
+                
+                var tRow = document.createElement("tr");
+
+                var cNume = document.createElement("td");
+                if (document.getElementById("nume").value) {
+                    cNume.innerHTML = document.getElementById("nume").value;
+                }
+
+                var cPrenume = document.createElement("td");
+                if (document.getElementById("prenume").value) {
+                    cPrenume.innerHTML = document.getElementById("prenume").value;
+                }
+
+                var cJob = document.createElement("td");
+                if (document.getElementById("job").value) {
+                    cJob.innerHTML = document.getElementById("job").value;
+                }
+
+                tRow.appendChild(cNume);
+                tRow.appendChild(cPrenume);
+                tRow.appendChild(cJob);
+                
+                var tBody = document.getElementById("tableBody");
+                tBody.appendChild(tRow);
+
+               
+            }        
+        </script>
+
+    </body>
+</html>
